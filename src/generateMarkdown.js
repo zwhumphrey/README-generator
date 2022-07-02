@@ -4,7 +4,18 @@ function renderLicenseBadge(license) {
     if (license === "MIT"){
         return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
     } 
-    //create for each lic.
+    if (license === "Unlicense"){
+        return `([![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/))`
+    } 
+    if (license === "WTFPL"){
+        return `[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)`
+    } 
+    if (license === "Eclipse"){
+        return `[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)](https://opensource.org/licenses/EPL-1.0)`
+    } 
+    if (license === "Apache"){
+        return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`
+    } 
 }
 
 // TODO: Create a function that returns the license link
@@ -15,7 +26,7 @@ function renderLicenseLink(license) {}
 // If there is no license, return an empty string
 function renderLicenseSection(license) {}
 
-// TODO: Create a function to generate markdown for README
+// A function to generate markdown for README
 function generateMarkdown(responce) {
   return `# ${responce.title}
   ${renderLicenseBadge(responce.license)}
