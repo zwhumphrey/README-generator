@@ -10,8 +10,8 @@ const questions = [
         type: "input",
         name: "title",
         message: "What is the title of your project?",
-        validate: answer => {
-            if (answer) {
+        validate: userTitle => {
+            if (userTitle) {
                 return true;
             } else {
                 console.log("You did not enter a title please do so to continue!");
@@ -19,6 +19,119 @@ const questions = [
             }
         }
     },
+
+    {
+        type: "input",
+        name: "description",
+        message: "Add a description of the project.",
+        validate: userDescription => {
+            if (userDescription) {
+                return true;
+            } else {
+                console.log("Enter a description to continue.");
+                return false;
+            }
+        }
+    },
+
+    // {
+    //     type: "input",
+    //     name: "Table of Contents",
+    //     message: "Table of Contents for the project.",
+    //     validate: userTableOfContents => {
+    //         if (userTableOfContents) {
+    //             return true;
+    //         } else {
+    //             return false;
+    //         }
+    //     }
+    // },
+
+    {
+        type: "input",
+        name: "installation",
+        message: "How do you install your project?",
+        validate: userInstallation => {
+            if (userInstallation) {
+                return true;
+            } else {
+                console.log("Enter a Installation guide to continue.");
+                return false;
+            }
+        }
+    },
+
+    {
+        type: "input",
+        name: "usage",
+        message: "How do you use this project?",
+        validate: userUsage => {
+            if (userUsage) {
+                return true;
+            } else {
+                console.log("Enter how to use your project to continue.");
+                return false;
+            }
+        }
+    },
+
+    {
+        type: "input",
+        name: "license",
+        message: "Add license(s) used for the project.",
+        choices: ["MIT", "None of the above"],
+        validate: userLicense => {
+            if (userLicense) {
+                return true;
+            } else {
+                console.log("Select a license to continue.");
+                return false;
+            }
+        }
+    },
+
+    {
+        type: "input",
+        name: "contribution",
+        message: "How can others contribute to this project?",
+        validate: userContribution => {
+            if (userContribution) {
+                return true;
+            } else {
+                console.log("Answer how can others contribute to this project to continue.");
+                return false;
+            }
+        }
+    },
+
+    {
+        type: "input",
+        name: "test",
+        message: "How can we test this project?",
+        validate: userTest => {
+            if (userTest) {
+                return true;
+            } else {
+                console.log("Answer how can we test this project to continue.");
+                return false;
+            }
+        }
+    },
+
+    {
+        type: "input",
+        name: "questions",
+        message: "Any questions of the project? Please enter email to get them answered!",
+        validate: userQuestions => {
+            if (userQuestions) {
+                return true;
+            } else {
+                console.log("Enter a Questions to continue.");
+                return false;
+            }
+        }
+    },
+
 
 ];
 
@@ -33,7 +146,12 @@ function writeToFile(fileName, data) {
 };
 
 // A function to initialize app
-function init() {}
+function init() {
+    inquirer.prompt(questions)
+    .then(responce => {
+        writeToFile("README.md", generateMarkdown(responce))
+    })
+}
 
 // Function call to initialize app
 init();
