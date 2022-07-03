@@ -1,4 +1,4 @@
-// TODO: Include packages needed for this application
+// Packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
 const generateMarkdown = require("./src/generateMarkdown.js");
@@ -33,19 +33,6 @@ const questions = [
             }
         }
     },
-
-    // {
-    //     type: "input",
-    //     name: "Table of Contents",
-    //     message: "Table of Contents for the project.",
-    //     validate: userTableOfContents => {
-    //         if (userTableOfContents) {
-    //             return true;
-    //         } else {
-    //             return false;
-    //         }
-    //     }
-    // },
 
     {
         type: "input",
@@ -148,10 +135,14 @@ function writeToFile(fileName, data) {
 // A function to initialize app
 function init() {
     inquirer.prompt(questions)
-    .then(responce => {
-        writeToFile("README.md", generateMarkdown(responce))
-    })
-}
+    .then(function (userInput) {
+        console.log(userInput)
+        writeToFile("README.md", generateMarkdown(userInput));
+    });
+//     .then(responce => {
+//         writeToFile("README.md", generateMarkdown(responce))
+//     })
+// }
 
 // Function call to initialize app
 init();
