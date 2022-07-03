@@ -1,10 +1,10 @@
-# T
+# This is a Test project!
 
-[![License](https://img.shields.io/badge/License-MIT,Unlicense,WTFPL,Eclipse-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)
+[![License](https://img.shields.io/badge/License-MIT,WTFPL-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)
 
 
 ## Description:
-t
+I am creating a project that will do readme files in a flash!
 ## Table of Contents
 1. [Description](#description)
 2. [Installation](#installation)
@@ -15,14 +15,14 @@ t
 7. [Questions](#questions)
 
 ## Usage:
-t
+aswner the quesitons and a high quality README will produce
 ## License:
-MIT,Unlicense,WTFPL,Eclipse
+MIT,WTFPL
 ## Contribution:
-y
+under the Questions section you can contact the person
 ## Test:
-y
+npm test
 ## Questions:
--Github: [y](https://github.com/y)
+-Github: [zwhumphrey](https://github.com/zwhumphrey)
 
--Email: [y](mailto:y)
+-Email: [zwhumphrey@icloud.com](mailto:zwhumphrey@icloud.com)
