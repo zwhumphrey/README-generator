@@ -63,10 +63,10 @@ const questions = [
     },
 
     {
-        type: "input",
+        type: "checkbox",
         name: "license",
         message: "Add license(s) used for the project.",
-        choices: ["MIT", "Unlicense", "WTFPL", "Eclipse", "Apache",  "None of the above"],
+        choices: [ "MIT", "Unlicense", "WTFPL", "Eclipse", "Apache",  "None of the above" ],
         validate: userLicense => {
             if (userLicense) {
                 return true;
@@ -139,7 +139,7 @@ function run() {
         console.log(userInput)
         writeToFile("README.md", generateMarkdown(userInput));
     });
-}
+};
 
 // Function call to initialize app
 run();
