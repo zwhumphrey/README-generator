@@ -133,16 +133,13 @@ function writeToFile(fileName, data) {
 };
 
 // A function to initialize app
-function init() {
+function run() {
     inquirer.prompt(questions)
     .then(function (userInput) {
         console.log(userInput)
         writeToFile("README.md", generateMarkdown(userInput));
     });
-//     .then(responce => {
-//         writeToFile("README.md", generateMarkdown(responce))
-//     })
-// }
+}
 
 // Function call to initialize app
-init();
+run();
