@@ -70,9 +70,6 @@ const questions = [
         validate: userLicense => {
             if (userLicense) {
                 return true;
-            } else {
-                console.log("Select a license to continue.");
-                return false;
             }
         }
     },
@@ -107,13 +104,27 @@ const questions = [
 
     {
         type: "input",
-        name: "questions",
-        message: "Any questions of the project? Please enter email to get them answered!",
-        validate: userQuestions => {
-            if (userQuestions) {
+        name: "github",
+        message: "Enter your Github username.",
+        validate: userGithub => {
+            if (userGithub) {
                 return true;
             } else {
-                console.log("Enter a Questions to continue.");
+                console.log("Enter a Github username to continue.");
+                return false;
+            }
+        }
+    },
+
+    {
+        type: "input",
+        name: "email",
+        message: "Enter your email.",
+        validate: userEmail => {
+            if (userEmail) {
+                return true;
+            } else {
+                console.log("Enter a email to continue.");
                 return false;
             }
         }

@@ -48,7 +48,8 @@ ${responce.contribution}
 ## Test,
 ${responce.test}
 ## Questions,
-${responce.questions}
+Github: [${responce.github}](https://github.com/${responce.github})
+Email: [${responce.email}](mailto:user@example.com)
 `;
 }
 
