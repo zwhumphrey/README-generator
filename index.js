@@ -66,10 +66,13 @@ const questions = [
         type: "checkbox",
         name: "license",
         message: "Add license(s) used for the project.",
-        choices: [ "MIT", "Unlicense", "WTFPL", "Eclipse", "Apache",  "None of the above" ],
+        choices: ["MIT", "Unlicense", "WTFPL", "Eclipse", "Apache",  "None of the above"],
         validate: userLicense => {
             if (userLicense) {
                 return true;
+            } else {
+                console.log("Please pick one license or None of the above.")
+                return false;
             }
         }
     },

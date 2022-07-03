@@ -2,33 +2,58 @@
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
     if (license === "MIT"){
-        return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
-    } else if (license === "Unlicense"){
-        return `([![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/))`
-    } else if (license === "WTFPL"){
-        return `[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)`
-    } else if (license === "Eclipse"){
-        return `[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)](https://opensource.org/licenses/EPL-1.0)`
-    } else if (license === "Apache"){
-        return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`
-    } else if (license === "None of the above"){
+        return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]`;
+    } 
+    if (license === "Unlicense"){
+        return `([![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)])`;
+    } 
+    if (license === "WTFPL"){
+        return `[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)]`;
+    } 
+    if (license === "Eclipse"){
+        return `[![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)]`;
+    } 
+    if (license === "Apache"){
+        return `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)]`;
+    } 
+    if (license === "None of the above"){
+        return `[]`;
+    } 
+};
+
+
+// A function that returns the license link
+// If there is no license, return an empty string
+function renderLicenseLink(license) {
+    if (license === "MIT"){
+        return `(https://opensource.org/licenses/MIT)`
+    } 
+    if (license === "Unlicense"){
+        return `(http://unlicense.org/)`
+    } 
+    if (license === "WTFPL"){
+        return `(http://www.wtfpl.net/about/)`
+    } 
+    if (license === "Eclipse"){
+        return `(https://opensource.org/licenses/EPL-1.0)`
+    } 
+    if (license === "Apache"){
+        return `(https://opensource.org/licenses/Apache-2.0)`
+    } 
+    if (license === "None of the above"){
         return `[]`
     } 
-}
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
-
+};
+// ${renderLicenseBadge(responce.license)} 
 // A function to generate markdown for README
 function generateMarkdown(responce) {
   return `# ${responce.title}
-  ${renderLicenseBadge(responce.license)}
-## Description,
+
+[![License](https://img.shields.io/badge/License-${responce.license}-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)
+
+
+## Description:
 ${responce.description}
 ## Table of Contents
 1. [Description](#description)
@@ -39,17 +64,18 @@ ${responce.description}
 6. [Test](#test)
 7. [Questions](#questions)
 
-## Usage,
+## Usage:
 ${responce.usage}
-## License,
+## License:
 ${responce.license}
-## Contribution,
+## Contribution:
 ${responce.contribution}
-## Test,
+## Test:
 ${responce.test}
-## Questions,
-Github: [${responce.github}](https://github.com/${responce.github})
-Email: [${responce.email}](mailto:user@example.com)
+## Questions:
+-Github: [${responce.github}](https://github.com/${responce.github})
+
+-Email: [${responce.email}](mailto:${responce.email})
 `;
 }
 
